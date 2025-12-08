@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مقصبة الرحمة</title>
+
+  <!-- خطوط -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="mksdalogo.png.jpg">
+
+  <style>
+    :root{
+      --bg:#fbf8f7;
+      --red:rgba(90,0,0,0.92);
+      --red-plain:#7a0000;
+      --gold:#d4af37;
+      --muted:#6f6f6f;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.55);
+      --accent:#c84b3c;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Cairo',sans-serif;background:var(--bg);color:#222;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+
+    /* Header */
+    header{
+      position:fixed;top:0;left:0;right:0;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 22px;background:linear-gradient(180deg, rgba(60,0,0,0.88), rgba(40,0,0,0.72));
+      z-index:200;backdrop-filter: blur(6px);box-shadow:0 8px 28px rgba(0,0,0,0.22);
+      color:var(--gold);
+    }
+    .header-left{display:flex;align-items:center;gap:14px}
+    .logo-wrap{width:86px;height:86px;border-radius:16px;background:var(--card);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,0.12)}
+    .logo-wrap img{width:70px;height:70px;object-fit:contain;border-radius:8px}
+    h1.site-title{margin:0;font-family:'Amiri',serif;color:var(--gold);font-size:28px;text-shadow:0 3px 14px rgba(0,0,0,0.35)}
+
+    .header-right{display:flex;align-items:center;gap:20px;color:#fff;font-weight:700}
+    .phone{display:flex;flex-direction:column;align-items:flex-end;font-size:14px}
+    .phone .num{font-size:16px;color:var(--gold)}
+    .hours{font-size:13px;color:#ffd8b8}
+
+    .header-spacer{height:112px}
+
+    /* Hero */
+    .hero {
+      max-width:1200px;
+      margin: 10px auto 0;
+      display:flex;
+      gap:28px;
+      padding:18px;
+      align-items:center;
+    }
+    .hero-left{flex:1;padding:40px 12px;}
+    .hero-title{font-size:44px;color:#111;line-height:1.05;font-weight:800;margin:0 0 18px 0;}
+    .hero-sub{font-size:18px;color:var(--muted);margin-bottom:26px;max-width:620px;}
+
+    .cta-row{display:flex;gap:16px;align-items:center}
+    .btn{padding:14px 20px;border-radius:12px;font-weight:800;cursor:pointer;border:0;box-shadow:0 10px 30px rgba(0,0,0,0.12);}
+    .btn-order{background:var(--accent);color:#fff}
+    .btn-prices{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+
+    .hero-right{width:460px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,0.08);background:#fff;display:flex;align-items:center;justify-content:center;padding:12px;}
+    .hero-right img{width:430px;height:auto;object-fit:cover;}
+
+    /* Sections */
+    .container{max-width:1200px;margin:18px auto;padding:0 20px}
+    .title{text-align:center;font-size:34px;color:var(--red-plain);font-weight:800}
+    .line{width:140px;height:4px;background:var(--gold);margin:10px auto 30px;border-radius:3px}
+
+    .products{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;padding-bottom:30px}
+    .card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.06);transition:transform .35s,border-color .35s;border:2px solid transparent;display:flex;flex-direction:column}
+    .card:hover{transform:translateY(-8px);border-color:var(--gold)}
+    .card img{width:100%;height:200px;object-fit:cover}
+    .info{text-align:center;padding:14px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+    .price{color:var(--red-plain);font-weight:900;font-size:18px}
+    .badge-un{background:#f1f1f1;color:#666;padding:8px 12px;border-radius:10px;font-weight:700;margin-top:10px}
+
+    .btn.small{padding:10px 12px;border-radius:8px;font-weight:800}
+    .btn.wh{background:#25D366;color:#fff}
+    .btn.info{background:transparent;border:2px solid var(--red-plain);color:var(--red-plain)}
+
+    /* Info */
+    .info-section{margin-top:40px;background:#fff;border-top:6px solid var(--red-plain);padding:36px;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.04)}
+    .info-section h2{text-align:center;color:var(--red-plain);font-size:28px;margin-bottom:18px}
+    .points{max-width:980px;margin:20px auto;font-size:18px;color:var(--muted);line-height:1.9}
+    .points li{margin:12px 0}
+
+    /* Branches */
+    .branches{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between;margin-top:28px}
+    .branch{flex:1;min-width:260px;background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+    .map-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:800}
+
+    footer{margin-top:36px;background:linear-gradient(180deg,var(--red-plain),#6a0000);color:#fff;padding:26px;text-align:center;font-weight:700}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <div class="logo-wrap"><img src="mksdalogo.png.jpg" alt="logo"></div>
+    <div>
+      <h1 class="site-title">مقصبة الرحمة</h1>
+      <div style="font-size:13px;color:#ffdcb9;">طريق سدراتة — مقابل قسنطيني للحلويات</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="phone">
+      <div class="num">0778 285 691</div>
+      <div class="hours">07:00 — 20:00</div>
+    </div>
+    <div style="font-size:13px;color:#ffdcb9">التوصيل: غير متوفر</div>
+  </div>
+</header>
+
+<div class="header-spacer"></div>
+
+<section class="hero">
+  <div class="hero-left">
+    <h2 class="hero-title">أفضل أنواع اللحوم والدواجن<br>بأسعار تنافسية في دوروش</h2>
+    <p class="hero-sub">نقدم لحوماً طازجة ودواجن مختارة بعناية — زر المحل أو اسأل عن الأسعار اليومية.</p>
+
+    <div class="cta-row">
+      <button class="btn btn-order" onclick="scrollToSection('products')">عرض الأسعار والطلب</button>
+      <a class="btn btn-prices" href="#branches">فروعنا</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="https://i.imgur.com/l7axzNY.jpeg">
+  </div>
+</section>
+
+<main class="container">
+
+  <h2 class="title">منتجات اليوم</h2>
+  <div class="line"></div>
+
+  <section class="products" id="products">
+
+    <!-- كبدة -->
+    <article class="card">
+      <img src="https://i.imgur.com/VJQGQ6A.jpeg">
+      <div class="info">
+        <h3>كبدة دجاج</h3>
+        <div class="price" data-key="kbeda">2,500 د.ج / كغ</div>
+        <div class="actions">
+          <button class="btn small wh" onclick="orderWhatsApp('كبدة دجاج')">اطلب عبر واتساب</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- دجاج كامل -->
+    <article class="card">
+      <img src="https://i.imgur.com/IfT9qJj.jpeg">
+      <div class="info">
+        <h3>الدجاج الكامل</h3>
+        <div class="price" data-key="fullch">900 د.ج / كغ</div>
+        <div class="actions">
+          <button class="btn small wh" onclick="orderWhatsApp('دجاج كامل')">اطلب عبر واتساب</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- الأجنحة -->
+    <article class="card">
+      <img src="https://i.imgur.com/t0tVtSv.jpeg">
+      <div class="info">
+        <h3>أجنحة</h3>
+        <div class="price" data-key="wings">600 د.ج / كغ</div>
+        <div class="actions">
+          <button class="btn small wh" onclick="orderWhatsApp('أجنحة دجاج')">اطلب</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- الأرجل -->
+    <article class="card">
+      <img src="https://i.imgur.com/zQuG1Rp.jpeg">
+      <div class="info">
+        <h3>أرجل دجاج</h3>
+        <div class="price" data-key="legs">520 د.ج / كغ</div>
+        <div class="actions">
+          <button class="btn small wh" onclick="orderWhatsApp('أرجل دجاج')">اطلب</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- الصدر -->
+    <article class="card">
+      <img src="https://i.imgur.com/04eJ1qV.jpeg">
+      <div class="info">
+        <h3>صدر دجاج</h3>
+        <div class="price" data-key="breast">1,100 د.ج / كغ</div>
+        <div class="actions">
+          <button class="btn small wh" onclick="orderWhatsApp('صدر دجاج')">اطلب</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- كانزة -->
+    <article class="card">
+      <img src="https://i.imgur.com/04eJ1qV.jpeg">
+      <div class="info">
+        <h3>كانزة</h3>
+        <div class="price" data-key="kanza">420 د.ج / كغ</div>
+        <div class="actions">
+          <button class="btn small wh" onclick="orderWhatsApp('كانزة')">اطلب</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- اللحم (غير متوفر) -->
+    <article class="card">
+      <img src="https://i.imgur.com/o7u4u2E.jpeg">
+      <div class="info">
+        <h3>اللحم</h3>
+        <div class="badge-un">غير متوفر حالياً</div>
+      </div>
+    </article>
+
+    <!-- دجاج مستورد (غير متوفر) -->
+    <article class="card">
+      <img src="https://i.imgur.com/o7u4u2E.jpeg">
+      <div class="info">
+        <h3>دجاج مستورد</h3>
+        <div class="badge-un">غير متوفر حالياً</div>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="info-section" id="info">
+    <h2>معلومات عن اللحوم والدواجن</h2>
+    <ul class="points">
+      <li>القيمة الغذائية...</li>
+      <li>الحديد والفيتامينات...</li>
+      <li>الخيارات الصحية...</li>
+      <li>التخزين السليم...</li>
+      <li>السلامة الغذائية...</li>
+    </ul>
+
+    <div class="branches" id="branches">
+      <div class="branch">
+        <h3>المحل الأول</h3>
+        <p>العنوان: طريق سدزاتة...</p>
+        <p>الموقع GPS سيضاف لاحقاً.</p>
+      </div>
+      <div class="branch">
+        <h3>المحل الثاني — مداغوروش</h3>
+        <p>العنوان: وسط الفيلاج — مداغوروش</p>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=36.075528,7.819163" target="_blank">📍 فتح في الخرائط</a>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  الهاتف: <strong>0778 285 691</strong> — التوصيل غير متوفر — © مقصبة الرحمة
+</footer>
+
+
+<script>
+const WA_PHONE = '213778285691';
+
+function orderWhatsApp(item){
+  const text = encodeURIComponent(أود طلب: ${item});
+  window.open(https://wa.me/${WA_PHONE}?text=${text},'_blank');
+}
+
+function scrollToSection(id){
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth'});
+}
+
+const defaultPrices = {
+  kbeda:'2,500 د.ج / كغ',
+  fullch:'900 د.ج / كغ',
+  wings:'600 د.ج / كغ',
+  legs:'520 د.ج / كغ',
+  breast:'1,100 د.ج / كغ',
+  kanza:'420 د.ج / كغ'
+};
+
+function loadPrices(){
+  const saved = JSON.parse(localStorage.getItem("mk_pricing_v1") || "{}");
+  document.querySelectorAll("[data-key]").forEach(el=>{
+    const k = el.dataset.key;
+    el.textContent = saved[k] || defaultPrices[k];
+  });
+}
+loadPrices();
+</script>
+
+</body>
+</html>
