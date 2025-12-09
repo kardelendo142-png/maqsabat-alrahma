@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مقصبة الرحمة — مداوروش</title>
+
+  <meta name="keywords" content="لحوم طازجة, دجاج طازج, مقصبة الرحمة, لحوم مداوروش, دجاج مداوروش, أسعار اللحوم, صدر دجاج, أجنحة دجاج, فخاد دجاج, مقصبة الجزائر, لحوم حلال, كبدة دجاج, كانزة, دواجن طازجة">
+  <meta name="description" content="مقصبة الرحمة — نوفر أجود أنواع اللحوم والدواجن الطازجة يومياً بأسعار مناسبة في مداوروش.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/mksdalogo.png">
+
+  <style>
+    :root{
+      --bg:#fbf8f7;--red:rgba(90,0,0,0.92);--red-plain:#7a0000;--gold:#d4af37;--muted:#6f6f6f;--card:#ffffff;--accent:#c84b3c;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);font-family:'Cairo',sans-serif}
+    header{background:linear-gradient(180deg, rgba(60,0,0,0.88), rgba(40,0,0,0.72));color:var(--gold);padding:12px 22px;display:flex;justify-content:space-between;position:fixed;top:0;left:0;right:0;z-index:200}
+    .header-spacer{height:112px}
+
+    .hero{display:flex;gap:28px;max-width:1200px;margin:20px auto;padding:18px}
+    .hero-title{font-size:44px;font-weight:800;margin-bottom:18px}
+    .btn{padding:14px 20px;border-radius:12px;font-weight:800;border:0;cursor:pointer}
+    .btn-order{background:var(--accent);color:#fff}
+    .btn-prices{background:transparent;color:var(--accent);border:2px solid var(--accent);border-radius:10px}
+
+    .container{max-width:1200px;margin:18px auto;padding:0 20px}
+    .title{text-align:center;font-size:34px;font-weight:800;color:var(--red-plain)}
+    .line{width:120px;height:4px;background:var(--gold);margin:10px auto 30px;border-radius:4px}
+
+    .products{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;padding-bottom:30px}
+    .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 0 18px rgba(0,0,0,0.1)}
+    .card img{width:100%;height:200px;object-fit:cover}
+    .info{text-align:center;padding:14px}
+    .price{color:var(--red-plain);font-weight:900;font-size:18px}
+    .btn.small{padding:10px 12px;border-radius:8px;font-weight:800}
+    .btn.wh{background:#25D366;color:#fff}
+
+    footer{margin-top:40px;background:#600;color:#fff;text-align:center;padding:26px;font-weight:800}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left" style="display:flex;align-items:center;gap:14px">
+    <img src="img/mksdalogo.png" style="width:70px;height:70px;border-radius:12px">
+    <div>
+      <h1 class="site-title" style="margin:0;font-family:'Amiri',serif;color:var(--gold)">مقصبة الرحمة</h1>
+      <div style="font-size:13px;color:#ffdcb9;">طريق سدراتة — مقابل قسنطيني للحلويات — مداوروش</div>
+    </div>
+  </div>
+
+  <div class="header-right" style="color:white;text-align:right;font-weight:700">
+    <div class="num" style="color:var(--gold)">0778 285 691</div>
+    <div style="font-size:13px;color:#ffdcb9">07:00 — 20:00</div>
+  </div>
+</header>
+
+<div class="header-spacer"></div>
+
+<section class="hero">
+  <div style="flex:1">
+    <h2 class="hero-title">أفضل أنواع اللحوم والدواجن<br>بأسعار تنافسية في مداوروش</h2>
+
+    <div style="display:flex;gap:16px">
+      <button class="btn btn-order" onclick="scrollToSection('products')">عرض الأسعار والطلب</button>
+      <a class="btn btn-prices" href="#branches">فروعنا</a>
+    </div>
+  </div>
+
+  <img src="img/hero-image.jpg" style="width:420px;border-radius:16px;object-fit:cover">
+</section>
+
+<main class="container">
+
+  <h2 class="title">منتجات اليوم</h2>
+  <div class="line"></div>
+
+  <section class="products" id="products">
+
+    <article class="card">
+      <img src="img/chicken-liver.jpg">
+      <div class="info">
+        <h3>كبدة دجاج</h3>
+        <div class="price">2,500 د.ج / كغ</div>
+        <button class="btn small wh" onclick="orderWhatsApp('كبدة دجاج')">اطلب عبر واتساب</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="img/chicken-full.jpg">
+      <div class="info">
+        <h3>دجاج كامل</h3>
+        <div class="price">900 د.ج / كغ</div>
+        <button class="btn small wh" onclick="orderWhatsApp('دجاج كامل')">اطلب عبر واتساب</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="img/chicken-wings.jpg">
+      <div class="info">
+        <h3>أجنحة دجاج</h3>
+        <div class="price">600 د.ج / كغ</div>
+        <button class="btn small wh" onclick="orderWhatsApp('أجنحة دجاج')">اطلب عبر واتساب</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="img/chicken-breast.jpg">
+      <div class="info">
+        <h3>صدر دجاج</h3>
+        <div class="price">1,100 د.ج / كغ</div>
+        <button class="btn small wh" onclick="orderWhatsApp('صدر دجاج')">اطلب عبر واتساب</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="img/kanza.jpg">
+      <div class="info">
+        <h3>كانزة</h3>
+        <div class="price">1,200 د.ج / كغ</div>
+        <button class="btn small wh" onclick="orderWhatsApp('كانزة')">اطلب عبر واتساب</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="img/chicken-legs.jpg">
+      <div class="info">
+        <h3>أرجل دجاج</h3>
+        <div class="price">950 د.ج / كغ</div>
+        <button class="btn small wh" onclick="orderWhatsApp('أرجل دجاج')">اطلب عبر واتساب</button>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+<section class="container" id="info-section">
+  <h2 class="title">معلومات عن الدواجن</h2>
+  <div class="line"></div>
+
+  <div class="products">
+
+    <article class="card">
+      <img src="img/chicken-breast.jpg">
+      <div class="info">
+        <h3>صدر الدجاج: بروتين خفيف وطبيعي</h3>
+        <p style="color:#555;font-size:15px;margin:10px 0">
+          يعتبر صدر الدجاج من أفضل مصادر البروتين قليل الدهون، يساعد في بناء العضلات، ويمد الجسم بالطاقة دون سعرات حرارية عالية.
+        </p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="img/chicken-wings.jpg">
+      <div class="info">
+        <h3>أجنحة الدجاج — غنية بالسعرات</h3>
+        <p style="color:#555;font-size:15px;margin:10px 0">
+          أجنحة الدجاج لذيذة ولكنها تحتوي على نسبة عالية من الدهون، ولذلك يُنصح بشويها أو سلقها بدل القلي.
+        </p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="img/chicken-liver.jpg">
+      <div class="info">
+        <h3>كبدة الدجاج — قيمة غذائية ممتازة</h3>
+        <p style="color:#555;font-size:15px;margin:10px 0">
+          تحتوي الكبدة على الحديد، الفيتامينات، الزنك، وهي مفيدة لمرضى الأنيميا، ولكن يجب تناولها باعتدال.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="title">📌 معلومات صحية مهمة عن الدجاج</h2>
+  <div class="line"></div>
+
+  <div style="background:#fff;padding:20px;border-radius:14px;box-shadow:0 0 14px rgba(0,0,0,0.1);font-size:16px;color:#444;line-height:1.7">
+
+    <h3 style="color:#7a0000">✔ فوائد الدجاج الصحية:</h3>
+    <ul>
+      <li>غني بالبروتين الضروري لبناء العضلات وتجديد الخلايا.</li>
+      <li>يساعد على الشعور بالشبع لفترات طويلة، مناسب للريجيم.</li>
+      <li>يحتوي على فيتامينات B المهمة للطاقة وصحة الأعصاب.</li>
+      <li>قليل الدهون مقارنة باللحوم الحمراء (خاصة الصدر).</li>
+      <li>مصدر مهم للفسفور الذي يحافظ على صحة العظام والأسنان.</li>
+    </ul>
+
+    <h3 style="color:#7a0000">✔ طرق صحية لطهي الدجاج:</h3>
+    <ul>
+      <li>الشوي أو السلق أفضل من القلي بالزيت.</li>
+      <li>إزالة الجلد يقلل الدهون بنسبة قد تصل إلى 60%.</li>
+      <li>تتبيل الدجاج بالليمون والثوم والبهارات أفضل من الصلصات الثقيلة.</li>
+    </ul>
+
+    <h3 style="color:#7a0000">✔ نصائح السلامة الغذائية:</h3>
+    <ul>
+      <li>يجب طهي الدجاج حتى تصل حرارته الداخلية إلى 75° لضمان قتل البكتيريا.</li>
+      <li>فصل الدجاج النيء عن الخضروات لتجنب التلوث.</li>
+      <li>غسل اليدين جيداً بعد لمس الدجاج النيء.</li>
+      <li>عدم ترك الدجاج خارج الثلاجة لأكثر من ساعة.</li>
+    </ul>
+
+    <h3 style="color:#7a0000">✔ القيم الغذائية التقريبية لكل 100غ:</h3>
+    <ul>
+      <li><b>صدر دجاج:</b> 26غ بروتين — 120 سعرة — دهون قليلة</li>
+      <li><b>أجنحة دجاج:</b> 20غ بروتين — 290 سعرة — دهون عالية</li>
+      <li><b>كبدة دجاج:</b> غنية بالحديد والفيتامينات — 165 سعرة</li>
+    </ul>
+
+  </div>
+</section>
+
+<footer>
+  جميع الحقوق محفوظة — مقصبة الرحمة — مداوروش
+</footer>
+
+<script>
+const WA_PHONE = '213778285691';
+function orderWhatsApp(item){
+  const text = encodeURIComponent(أود طلب: ${item});
+  window.open(https://wa.me/${WA_PHONE}?text=${text},'_blank');
+}
+function scrollToSection(id){
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
